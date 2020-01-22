@@ -1,3 +1,5 @@
+'use strict';
+
 let money, time;
 
 function start() {
@@ -29,7 +31,7 @@ function choseExpenses() {
             console.log("done!");
             appData.expenses[a] = b;
         } else {
-            i = i - 1;
+            i--;
         }  
     };
 }
@@ -63,5 +65,13 @@ function checkSavings() {
         alert("Доход в месяц с вашего депозита: " + appData.monthIncome);
     }
 }
-
 checkSavings();
+
+function choodeOptExpenses() {
+    for (let i = 1; i <= 3; i++) {
+        let questionOptExpenses = prompt("Статья необязательных расходов?");
+        appData.optionalExpenses[i] = questionOptExpenses;
+        console.log(appData.optionalExpenses);
+    }
+}
+chooseOptExpenses();
